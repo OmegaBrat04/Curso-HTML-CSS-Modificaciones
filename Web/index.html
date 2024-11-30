@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+<!-- Barra de navegación, Se añadieron iconos y mas opciones -->
+  <aside class="sidebar">
+    <h2>Projects</h2>
+    <ul>
+      <li><img src="../Web/assets/icons/user/project.svg" class="icon">Proyectos</li>
+      <li><img src="../Web/assets/icons/user/share.svg" class="icon">Compartir</li>
+      <li><img src="../Web/assets/icons/user/add-board.svg" class="icon">Añadir Tablero</li>
+      <li><img src="../Web/assets/icons/user/new-project.svg" class="icon">Nuevo Proyecto</li>
+    </ul>
+    
+    <!-- Nuevas opciones -->
+    <ul class="sidebar-bottom">
+      <li><img src="../Web/assets/icons/user/settings.svg" class="icon">Configuración</li>
+      <li><img src="../Web/assets/icons/user/help.svg" class="icon">Ayuda</li>
+    </ul>
+  </aside>
+
+  <div class="container">
+    <div class="main">
+      <header>
+        <h1><img src="../Web/assets/icons/user/workspace.svg" class="header-icon header-icon-small">Espacio de Trabajo</h1>
+      </header>
+
+      <div class="board">
+
+        <div class="column">
+          <h3><span class="dot blue"></span>Ideas</h3>
+          <div class="note">
+            <p><strong>Design Moodboard:</strong> Create a visual inspiration board for the product's look and feel.</p>
+            <img src="../Web/assets/icons/user/link.svg">
+          </div>
+          <button>Añadir Nota</button>
+        </div>
+
+        <div class="column">
+          <h3><span class="dot yellow"></span>En Progreso</h3>
+          <div class="note">
+            <p><strong>API Design:</strong> Define endpoints and structure for seamless integration.</p>
+          </div>
+          <div class="note">
+            <p><strong>Hi-Fi Prototypes:</strong> Finalize interactive prototypes for user testing.</p>
+          </div>
+          <div class="note">
+            <p><strong>Edge Case Designs:</strong> Address all potential user scenarios in the interface.</p>
+          </div>
+          <button>Añadir Nota</button>
+        </div>
+
+        <div class="column">
+          <h3><span class="dot green"></span>Finalizado</h3>
+          <div class="note">
+            <p><strong>Information Architecture:</strong> Organize content structure for usability.</p>
+          </div>
+          <div class="note">
+            <p><strong>Code Convention:</strong> Establish consistent coding standards for the team.</p>
+          </div>
+          <div class="note">
+            <p><strong>Wireframes:</strong> Finalize low-fidelity designs for the main features.</p>
+          </div>
+          <button>Añadir Nota</button>
+        </div>
+
+        <div class="column">
+          <h3><span class="dot black"></span>Objetivos</h3>
+          <div class="note">
+            <p><strong>MVP:</strong> Complete the minimum viable product for initial release.</p>
+          </div>
+          <div class="note">
+            <p><strong>Launch Plans:</strong> Develop a marketing and rollout strategy for the product.</p>
+          </div>
+          <button>Añadir Nota</button>
+        </div>
+
+        <div class="column image-loader-column">
+          <h3><span class="dot red"></span>Subir Imagen</h3>
+          <div class="note">
+            <h4>Load Image</h4>
+            <input type="text" id="image-url" placeholder="Ingresa el URL de la imagen">
+            <button onclick="loadImage()">Cargar Imagen</button>
+            <div id="image-container"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lista ordenada con mis datos -->
+      <ol class="ordered-list">
+        <li>MARTINEZ ACUÑA BRANDON 5G</li>
+        <li>MATRICULA: 2223330174</li>
+        <li>TALLER HTML Y CSS</li>
+      </ol>
+    </div>
+  </div>
+  <!-- Script en el que cargo imagenes -->
+  <script>
+    function loadImage() {
+      const url = document.getElementById('image-url').value;
+      const imageContainer = document.getElementById('image-container');
+      imageContainer.innerHTML = `<img src="${url}" alt="Loaded Image" class="loaded-image">`;
+    }
+  </script>
+</body>
+</html>
